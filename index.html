@@ -1,0 +1,1934 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Miran Media | Dijital Kreatif Ajans</title>
+    <meta
+      name="description"
+      content="Miran Media, Mardin/Midyat merkezli premium dijital kreatif ajans. Sosyal medya, marka kimliği, video prodüksiyon ve dijital pazarlama çözümleri."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #060504;
+        --panel: #13100d;
+        --panel-soft: rgba(255, 255, 255, 0.055);
+        --line: rgba(255, 255, 255, 0.12);
+        --text: #f7f4ec;
+        --muted: #b0a696;
+        --gold: #d4a765;
+        --gold-soft: rgba(212, 167, 101, 0.18);
+        --charcoal: #1a1511;
+        --max: 1180px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background:
+          radial-gradient(circle at 18% 8%, rgba(212, 167, 101, 0.18), transparent 28rem),
+          radial-gradient(circle at 78% 0%, rgba(184, 132, 74, 0.1), transparent 26rem),
+          linear-gradient(180deg, #090706 0%, #120f0c 50%, #060504 100%);
+        color: var(--text);
+        font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        overflow-x: hidden;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: -3;
+        pointer-events: none;
+        opacity: 0.34;
+        background-image: url("https://images.pexels.com/photos/37196919/pexels-photo-37196919.jpeg?auto=compress&cs=tinysrgb&w=2400");
+        background-position: center;
+        background-size: cover;
+        filter: sepia(0.22) saturate(0.72) brightness(0.23) contrast(1.08);
+      }
+
+      body::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: -2;
+        pointer-events: none;
+        background-image: linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+        background-size: 100% 4px;
+        mix-blend-mode: overlay;
+        opacity: 0.25;
+      }
+
+      .page-glow {
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        pointer-events: none;
+        background:
+          radial-gradient(circle at calc(50% + (var(--mx, 0) * 18%)) calc(38% + (var(--my, 0) * 12%)), rgba(212, 167, 101, 0.12), transparent 26rem),
+          linear-gradient(90deg, rgba(212, 167, 101, 0.08), transparent 18%, transparent 82%, rgba(212, 167, 101, 0.08));
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      :focus-visible {
+        outline: 2px solid rgba(212, 167, 101, 0.86);
+        outline-offset: 4px;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 50;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(5, 5, 5, 0.62);
+        backdrop-filter: blur(22px);
+      }
+
+      .nav::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -1px;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(212, 167, 101, 0.72), transparent);
+        opacity: 0.72;
+      }
+
+      .nav-inner {
+        width: min(var(--max), calc(100% - 40px));
+        height: 78px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 800;
+        letter-spacing: 0;
+      }
+
+      .brand-mark {
+        width: 46px;
+        height: 46px;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+        border: 1px solid rgba(217, 182, 107, 0.48);
+        border-radius: 12px;
+        background:
+          linear-gradient(135deg, rgba(217, 182, 107, 0.18), rgba(255, 255, 255, 0.04)),
+          #080706;
+      }
+
+      .brand-mark img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 42%;
+        padding: 0;
+        border-radius: 10px;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+        color: rgba(247, 244, 236, 0.74);
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .nav-links a {
+        transition: color 0.25s ease;
+      }
+
+      .nav-links a:hover {
+        color: var(--gold);
+      }
+
+      .nav-cta,
+      .button {
+        min-height: 46px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        border: 1px solid rgba(217, 182, 107, 0.48);
+        padding: 0 20px;
+        background: rgba(217, 182, 107, 0.1);
+        color: var(--text);
+        font-weight: 700;
+        font-size: 14px;
+        transition:
+          transform 0.25s ease,
+          border-color 0.25s ease,
+          background 0.25s ease;
+      }
+
+      .nav-cta:hover,
+      .button:hover {
+        transform: translateY(-2px);
+        border-color: var(--gold);
+        background: rgba(217, 182, 107, 0.18);
+      }
+
+      .button.primary {
+        background: var(--gold);
+        color: #101010;
+        border-color: var(--gold);
+        box-shadow: 0 14px 36px rgba(212, 167, 101, 0.16);
+      }
+
+      .button.primary:hover {
+        background: #f0cf86;
+      }
+
+      .mobile-top-cta {
+        display: none;
+      }
+
+      .hero {
+        position: relative;
+        min-height: 100svh;
+        display: grid;
+        align-items: end;
+        padding: 148px 0 54px;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 96px 34px 34px;
+        z-index: 0;
+        pointer-events: none;
+        border: 1px solid rgba(212, 167, 101, 0.18);
+        border-bottom-color: rgba(255, 255, 255, 0.08);
+        opacity: 0.78;
+      }
+
+      .hero-video {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background:
+          linear-gradient(90deg, rgba(6, 5, 4, 0.94), rgba(21, 16, 11, 0.6) 45%, rgba(6, 5, 4, 0.3)),
+          linear-gradient(180deg, rgba(6, 5, 4, 0.08), #060504 98%),
+          url("https://images.pexels.com/photos/32502281/pexels-photo-32502281.jpeg?auto=compress&cs=tinysrgb&w=2600") center/cover;
+        animation: cinematicDrift 18s ease-in-out infinite alternate;
+      }
+
+      .hero-video::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(circle at 78% 26%, rgba(217, 182, 107, 0.2), transparent 26rem),
+          linear-gradient(180deg, transparent 58%, #060504 100%);
+      }
+
+      .container {
+        width: min(var(--max), calc(100% - 40px));
+        margin: 0 auto;
+      }
+
+      .hero-grid {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0;
+        align-items: end;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 22px;
+        color: var(--gold);
+        font-size: 12px;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+      }
+
+      .eyebrow::before {
+        content: "";
+        width: 38px;
+        height: 1px;
+        background: var(--gold);
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      h1 {
+        max-width: 930px;
+        font-size: clamp(48px, 8vw, 112px);
+        line-height: 0.95;
+        letter-spacing: 0;
+      }
+
+      .hero-copy {
+        max-width: 690px;
+        margin-top: 28px;
+        color: rgba(247, 244, 236, 0.75);
+        font-size: clamp(18px, 2vw, 23px);
+        line-height: 1.55;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-top: 36px;
+      }
+
+      .signature-strip {
+        width: min(760px, 100%);
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+        margin-top: 34px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      .signature-strip span {
+        min-height: 74px;
+        display: grid;
+        place-items: center;
+        padding: 14px;
+        background: rgba(6, 5, 4, 0.58);
+        color: rgba(247, 244, 236, 0.78);
+        font-size: 12px;
+        font-weight: 800;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        backdrop-filter: blur(18px);
+      }
+
+      .hero-panel {
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        background:
+          linear-gradient(145deg, rgba(212, 167, 101, 0.1), transparent 36%),
+          rgba(12, 10, 8, 0.58);
+        backdrop-filter: blur(24px);
+        padding: 24px;
+        box-shadow: 0 22px 80px rgba(0, 0, 0, 0.35);
+      }
+
+      .hero-panel img {
+        width: 100%;
+        aspect-ratio: 4 / 5;
+        object-fit: cover;
+        object-position: center;
+        filter: saturate(0.7) contrast(1.1) brightness(0.88);
+      }
+
+      .metric-row {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        border-top: 1px solid var(--line);
+        margin-top: 22px;
+        padding-top: 20px;
+        gap: 12px;
+      }
+
+      .metric strong {
+        display: block;
+        color: var(--gold);
+        font-size: 22px;
+      }
+
+      .metric span {
+        display: block;
+        margin-top: 5px;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.35;
+      }
+
+      section {
+        position: relative;
+        padding: 112px 0;
+      }
+
+      .section-head {
+        display: grid;
+        grid-template-columns: minmax(0, 0.82fr) minmax(280px, 0.52fr);
+        gap: 36px;
+        align-items: end;
+        margin-bottom: 48px;
+      }
+
+      h2 {
+        font-size: clamp(34px, 5vw, 68px);
+        line-height: 1;
+        letter-spacing: 0;
+      }
+
+      .lead {
+        color: var(--muted);
+        font-size: 17px;
+        line-height: 1.75;
+      }
+
+      .about-band {
+        border-block: 1px solid rgba(255, 255, 255, 0.1);
+        background:
+          linear-gradient(90deg, rgba(217, 182, 107, 0.08), transparent 45%),
+          rgba(255, 255, 255, 0.025);
+      }
+
+      .prestige-line {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1px;
+        margin-top: 42px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.09);
+      }
+
+      .prestige-line div {
+        min-height: 132px;
+        padding: 24px;
+        background: rgba(255, 255, 255, 0.035);
+      }
+
+      .prestige-line strong {
+        display: block;
+        color: var(--gold);
+        font-size: 28px;
+        margin-bottom: 18px;
+      }
+
+      .prestige-line span {
+        color: rgba(247, 244, 236, 0.72);
+        font-size: 13px;
+        line-height: 1.55;
+      }
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 0.72fr) minmax(320px, 0.48fr);
+        gap: 44px;
+        align-items: center;
+      }
+
+      .about-copy {
+        color: rgba(247, 244, 236, 0.8);
+        font-size: clamp(22px, 3vw, 36px);
+        line-height: 1.28;
+        font-weight: 700;
+      }
+
+      .about-copy span {
+        color: var(--gold);
+      }
+
+      .about-note {
+        display: grid;
+        gap: 16px;
+      }
+
+      .note {
+        padding: 22px;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.045);
+        color: var(--muted);
+        line-height: 1.65;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+
+      .service-card {
+        min-height: 260px;
+        padding: 26px;
+        border: 1px solid var(--line);
+        background:
+          linear-gradient(145deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.025)),
+          rgba(10, 10, 10, 0.7);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition:
+          transform 0.28s ease,
+          border-color 0.28s ease,
+          background 0.28s ease;
+      }
+
+      .service-card:hover {
+        transform: translateY(-8px);
+        border-color: rgba(217, 182, 107, 0.55);
+        background:
+          linear-gradient(145deg, rgba(217, 182, 107, 0.13), rgba(255, 255, 255, 0.03)),
+          rgba(10, 10, 10, 0.74);
+      }
+
+      .service-icon {
+        width: 46px;
+        height: 46px;
+        display: grid;
+        place-items: center;
+        border: 1px solid rgba(217, 182, 107, 0.42);
+        color: var(--gold);
+        font-weight: 800;
+      }
+
+      .service-card h3 {
+        margin-top: 34px;
+        font-size: 24px;
+        line-height: 1.1;
+      }
+
+      .service-card p {
+        margin-top: 16px;
+        color: var(--muted);
+        line-height: 1.65;
+      }
+
+      .portfolio {
+        overflow: hidden;
+        background: #080808;
+      }
+
+      .portfolio-track {
+        display: grid;
+        grid-template-columns: 1.05fr 0.75fr 0.95fr;
+        gap: 18px;
+        align-items: stretch;
+      }
+
+      .work-card {
+        position: relative;
+        min-height: 470px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: #101010;
+        box-shadow: 0 28px 90px rgba(0, 0, 0, 0.34);
+      }
+
+      .work-card::after {
+        content: "";
+        position: absolute;
+        inset: 16px;
+        pointer-events: none;
+        border: 1px solid rgba(212, 167, 101, 0.18);
+        opacity: 0;
+        transition: opacity 0.35s ease;
+      }
+
+      .work-card:hover::after {
+        opacity: 1;
+      }
+
+      .work-card.small {
+        min-height: 226px;
+      }
+
+      .work-stack {
+        display: grid;
+        gap: 18px;
+      }
+
+      .work-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        filter: saturate(0.62) contrast(1.12) brightness(0.74);
+        transition: transform 0.55s ease, filter 0.55s ease;
+      }
+
+      .work-card:hover img {
+        transform: scale(1.06);
+        filter: saturate(0.82) contrast(1.14) brightness(0.92);
+      }
+
+      .work-caption {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 26px;
+        background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.92));
+      }
+
+      .work-caption span {
+        color: var(--gold);
+        font-size: 12px;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+      }
+
+      .work-caption h3 {
+        margin-top: 8px;
+        font-size: 26px;
+      }
+
+      .work-caption p {
+        max-width: 360px;
+        margin-top: 10px;
+        color: rgba(247, 244, 236, 0.72);
+        font-size: 14px;
+        line-height: 1.55;
+      }
+
+      .why-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        border-top: 1px solid var(--line);
+        border-left: 1px solid var(--line);
+      }
+
+      .why-item {
+        min-height: 210px;
+        padding: 24px;
+        border-right: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.025);
+      }
+
+      .why-item strong {
+        display: block;
+        color: var(--gold);
+        font-size: 32px;
+        margin-bottom: 42px;
+      }
+
+      .why-item h3 {
+        font-size: 18px;
+        line-height: 1.2;
+      }
+
+      .why-item p {
+        margin-top: 12px;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.55;
+      }
+
+      .testimonials {
+        background:
+          linear-gradient(rgba(5, 5, 5, 0.84), rgba(5, 5, 5, 0.94)),
+          url("https://images.pexels.com/photos/34945564/pexels-photo-34945564.jpeg?auto=compress&cs=tinysrgb&w=2400") center/cover;
+      }
+
+      .testimonial-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+
+      .quote-card {
+        padding: 28px;
+        border: 1px solid rgba(255, 255, 255, 0.13);
+        background: rgba(255, 255, 255, 0.06);
+        backdrop-filter: blur(22px);
+      }
+
+      .stars {
+        color: var(--gold);
+        font-size: 14px;
+        margin-bottom: 24px;
+      }
+
+      .quote-card p {
+        color: rgba(247, 244, 236, 0.82);
+        line-height: 1.7;
+      }
+
+      .client {
+        margin-top: 28px;
+        padding-top: 18px;
+        border-top: 1px solid var(--line);
+      }
+
+      .client strong {
+        display: block;
+      }
+
+      .client span {
+        display: block;
+        margin-top: 5px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .faq {
+        background:
+          linear-gradient(180deg, rgba(212, 167, 101, 0.055), transparent 34%),
+          rgba(255, 255, 255, 0.015);
+      }
+
+      .faq-list {
+        display: grid;
+        gap: 12px;
+      }
+
+      .faq-item {
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(255, 255, 255, 0.045);
+        backdrop-filter: blur(18px);
+      }
+
+      .faq-item summary {
+        min-height: 68px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        padding: 0 22px;
+        cursor: pointer;
+        color: var(--text);
+        font-size: 18px;
+        font-weight: 800;
+        list-style: none;
+      }
+
+      .faq-item summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .faq-item summary::after {
+        content: "+";
+        flex: 0 0 auto;
+        width: 30px;
+        height: 30px;
+        display: grid;
+        place-items: center;
+        border: 1px solid rgba(212, 167, 101, 0.32);
+        color: var(--gold);
+        font-size: 20px;
+        line-height: 1;
+      }
+
+      .faq-item[open] summary::after {
+        content: "-";
+      }
+
+      .faq-item[open] {
+        border-color: rgba(212, 167, 101, 0.32);
+        background: rgba(255, 255, 255, 0.062);
+      }
+
+      .faq-item p {
+        margin: 0;
+        padding: 0 22px 22px;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .contact {
+        padding-bottom: 48px;
+      }
+
+      .contact-wrap {
+        display: grid;
+        grid-template-columns: minmax(0, 0.9fr) minmax(320px, 0.5fr);
+        gap: 18px;
+        align-items: stretch;
+      }
+
+      .appointment-form {
+        display: grid;
+        gap: 12px;
+        margin-top: 30px;
+      }
+
+      .appointment-form label {
+        display: grid;
+        gap: 8px;
+        color: rgba(247, 244, 236, 0.78);
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .appointment-form input {
+        width: 100%;
+        min-height: 52px;
+        border: 1px solid rgba(255, 255, 255, 0.13);
+        background: rgba(0, 0, 0, 0.28);
+        color: var(--text);
+        padding: 0 16px;
+        font: inherit;
+        outline: none;
+        transition: border-color 0.22s ease, background 0.22s ease;
+      }
+
+      .appointment-form input:focus {
+        border-color: rgba(212, 167, 101, 0.72);
+        background: rgba(0, 0, 0, 0.42);
+      }
+
+      .appointment-form input::placeholder {
+        color: rgba(247, 244, 236, 0.42);
+      }
+
+      .appointment-form .button {
+        width: 100%;
+        border: 0;
+        cursor: pointer;
+      }
+
+      .form-note {
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.5;
+      }
+
+      .contact-main {
+        min-height: 460px;
+        padding: clamp(28px, 5vw, 54px);
+        border: 1px solid rgba(217, 182, 107, 0.28);
+        background:
+          radial-gradient(circle at 88% 8%, rgba(212, 167, 101, 0.22), transparent 20rem),
+          linear-gradient(145deg, rgba(217, 182, 107, 0.14), rgba(255, 255, 255, 0.03)),
+          rgba(255, 255, 255, 0.035);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .contact-main h2 {
+        max-width: 760px;
+      }
+
+      .contact-main p {
+        max-width: 620px;
+        margin-top: 24px;
+        color: var(--muted);
+        font-size: 18px;
+        line-height: 1.7;
+      }
+
+      .contact-links {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+      }
+
+      .contact-link {
+        min-height: 110px;
+        padding: 22px;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.04);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: transform 0.25s ease, border-color 0.25s ease;
+      }
+
+      .contact-link:hover {
+        transform: translateY(-4px);
+        border-color: rgba(217, 182, 107, 0.55);
+      }
+
+      .contact-link span {
+        color: var(--gold);
+        font-size: 12px;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+      }
+
+      .contact-link strong {
+        margin-top: 18px;
+        font-size: 18px;
+        overflow-wrap: anywhere;
+      }
+
+      .footer {
+        width: min(var(--max), calc(100% - 40px));
+        margin: 0 auto;
+        padding: 28px 0 42px;
+        border-top: 1px solid var(--line);
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .footer strong {
+        color: var(--gold);
+        font-weight: 800;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(28px);
+        transition: opacity 0.7s ease, transform 0.7s ease;
+      }
+
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @keyframes cinematicDrift {
+        from {
+          transform: scale(1);
+        }
+        to {
+          transform: scale(1.08) translate3d(-1.2%, -1%, 0);
+        }
+      }
+
+      @media (max-width: 980px) {
+        .nav-links {
+          display: none;
+        }
+
+        .hero-grid,
+        .section-head,
+        .about-grid,
+        .contact-wrap {
+          grid-template-columns: 1fr;
+        }
+
+        .hero {
+          padding-top: 124px;
+        }
+
+        .hero-panel {
+          max-width: 520px;
+        }
+
+        .services-grid,
+        .testimonial-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .prestige-line {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .portfolio-track {
+          grid-template-columns: 1fr;
+        }
+
+        .work-card,
+        .work-card.small {
+          min-height: 390px;
+        }
+
+        .why-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 640px) {
+        .nav-inner,
+        .container,
+        .footer {
+          width: min(100% - 28px, var(--max));
+        }
+
+        .nav-inner {
+          height: 68px;
+        }
+
+        .nav-cta {
+          display: none;
+        }
+
+        h1 {
+          font-size: clamp(44px, 14vw, 66px);
+        }
+
+        section {
+          padding: 82px 0;
+        }
+
+        .services-grid,
+        .testimonial-grid,
+        .why-grid,
+        .contact-links,
+        .metric-row,
+        .signature-strip,
+        .prestige-line {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-panel {
+          padding: 14px;
+        }
+
+        .about-copy {
+          font-size: 25px;
+        }
+
+        .service-card,
+        .why-item {
+          min-height: auto;
+        }
+
+        .footer {
+          flex-direction: column;
+        }
+      }
+      @media (max-width: 980px) {
+        .hero-panel img {
+          aspect-ratio: 16 / 11;
+          max-height: 420px;
+          object-position: center;
+        }
+
+        .work-card img {
+          object-position: center;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .hero {
+          min-height: 100svh;
+        }
+
+        .hero::before {
+          display: none;
+        }
+
+        .hero-video {
+          background-position: center top;
+        }
+
+        .hero-panel {
+          width: 100%;
+        }
+
+        .hero-panel img {
+          aspect-ratio: 16 / 10;
+          max-height: 310px;
+          object-position: center;
+        }
+
+        .work-card,
+        .work-card.small {
+          min-height: 0;
+          aspect-ratio: 4 / 5;
+        }
+
+        .work-card img {
+          height: 100%;
+          object-position: center;
+        }
+
+        .work-caption {
+          padding: 20px;
+        }
+
+        .work-caption h3 {
+          font-size: 22px;
+        }
+
+        .work-caption p {
+          font-size: 13px;
+          line-height: 1.45;
+        }
+      }
+
+      @media (max-width: 420px) {
+        .brand-mark {
+          width: 42px;
+          height: 42px;
+        }
+
+        .hero-panel img {
+          aspect-ratio: 1 / 1;
+        }
+
+        .work-card,
+        .work-card.small {
+          aspect-ratio: 3 / 4;
+        }
+      }
+      .mobile-section-nav,
+      .mobile-action-bar {
+        display: none;
+      }
+
+      @media (max-width: 760px) {
+        body {
+          padding-bottom: 82px;
+          background:
+            radial-gradient(circle at 50% 0%, rgba(212, 167, 101, 0.16), transparent 22rem),
+            linear-gradient(180deg, #090706 0%, #120f0c 48%, #060504 100%);
+        }
+
+        .nav {
+          background: rgba(6, 5, 4, 0.86);
+        }
+
+        .nav-inner {
+          width: calc(100% - 28px);
+          height: 64px;
+        }
+
+        .nav-cta {
+          display: none;
+        }
+
+        .mobile-top-cta {
+          min-width: 58px;
+          min-height: 38px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          border: 1px solid rgba(212, 167, 101, 0.46);
+          background: rgba(212, 167, 101, 0.12);
+          color: var(--text);
+          font-size: 12px;
+          font-weight: 900;
+        }
+
+        .brand {
+          gap: 10px;
+          font-size: 15px;
+        }
+
+        .brand-mark {
+          flex: 0 0 auto;
+        }
+
+        .mobile-section-nav {
+          position: fixed;
+          top: 64px;
+          left: 0;
+          right: 0;
+          z-index: 49;
+          display: flex;
+          gap: 8px;
+          overflow-x: auto;
+          padding: 8px 14px 10px;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+          background: rgba(6, 5, 4, 0.72);
+          backdrop-filter: blur(18px);
+          scrollbar-width: none;
+          scroll-snap-type: x mandatory;
+        }
+
+        .mobile-section-nav::-webkit-scrollbar {
+          display: none;
+        }
+
+        .mobile-section-nav a {
+          flex: 0 0 auto;
+          min-height: 32px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0 13px;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          background: rgba(255, 255, 255, 0.035);
+          color: rgba(247, 244, 236, 0.82);
+          font-size: 12px;
+          font-weight: 800;
+          scroll-snap-align: start;
+        }
+
+        .hero {
+          min-height: 100svh;
+          display: flex;
+          align-items: center;
+          padding: 128px 0 76px;
+        }
+
+        .hero-video {
+          opacity: 0.82;
+        }
+
+        .hero-grid {
+          display: block;
+        }
+
+        h1 {
+          max-width: 13ch;
+          font-size: clamp(42px, 12vw, 56px);
+          line-height: 1.03;
+        }
+
+        .hero-copy {
+          max-width: 31rem;
+          margin-top: 18px;
+          font-size: 16px;
+          line-height: 1.58;
+        }
+
+        .hero-actions {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 10px;
+          margin-top: 26px;
+        }
+
+        .button,
+        .nav-cta {
+          width: 100%;
+          min-height: 50px;
+        }
+
+        .button {
+          border-radius: 2px;
+        }
+
+        .signature-strip {
+          display: none;
+        }
+
+        .signature-strip span {
+          min-height: 54px;
+          font-size: 11px;
+          letter-spacing: 0.08em;
+        }
+
+        .hero-panel {
+          display: none;
+        }
+
+        .metric-row {
+          gap: 1px;
+          margin-top: 12px;
+          padding-top: 0;
+          border-top: 0;
+          background: rgba(255, 255, 255, 0.08);
+        }
+
+        .metric {
+          padding: 14px;
+          background: rgba(6, 5, 4, 0.76);
+        }
+
+        .metric strong {
+          font-size: 20px;
+        }
+
+        section {
+          padding: 62px 0;
+        }
+
+        .section-head {
+          gap: 18px;
+          margin-bottom: 28px;
+        }
+
+        .eyebrow {
+          margin-bottom: 16px;
+          font-size: 11px;
+          letter-spacing: 0.1em;
+        }
+
+        h2 {
+          font-size: clamp(31px, 10vw, 44px);
+          line-height: 1.04;
+        }
+
+        .lead {
+          font-size: 15px;
+          line-height: 1.68;
+        }
+
+        .about-copy {
+          font-size: 24px;
+          line-height: 1.3;
+        }
+
+        .about-note {
+          gap: 10px;
+        }
+
+        .note {
+          padding: 18px;
+          font-size: 14px;
+        }
+
+        .prestige-line {
+          margin-top: 24px;
+        }
+
+        .prestige-line div {
+          min-height: auto;
+          padding: 18px;
+        }
+
+        .prestige-line strong {
+          margin-bottom: 12px;
+          font-size: 22px;
+        }
+
+        .services-grid {
+          gap: 12px;
+        }
+
+        .service-card {
+          min-height: auto;
+          padding: 20px;
+          border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .service-card h3 {
+          margin-top: 24px;
+          font-size: 21px;
+        }
+
+        .service-card p {
+          margin-top: 12px;
+          font-size: 14px;
+          line-height: 1.58;
+        }
+
+        .portfolio-track,
+        .work-stack,
+        .testimonial-grid,
+        .contact-links {
+          gap: 12px;
+        }
+
+        .portfolio {
+          background:
+            linear-gradient(180deg, rgba(212, 167, 101, 0.055), transparent 24%),
+            #080706;
+        }
+
+        .work-caption span {
+          font-size: 11px;
+        }
+
+        .why-item {
+          padding: 20px;
+        }
+
+        .why-item strong {
+          margin-bottom: 22px;
+          font-size: 24px;
+        }
+
+        .quote-card {
+          padding: 22px;
+          background: rgba(255, 255, 255, 0.07);
+        }
+
+        .contact-main {
+          min-height: auto;
+          padding: 24px;
+          border-color: rgba(212, 167, 101, 0.36);
+        }
+
+        .contact-main p {
+          margin-top: 18px;
+          font-size: 15px;
+          line-height: 1.65;
+        }
+
+        .contact-link {
+          min-height: 88px;
+          padding: 18px;
+        }
+
+        .contact-link strong {
+          font-size: 16px;
+        }
+
+        .faq-list {
+          gap: 10px;
+        }
+
+        .faq-item summary {
+          min-height: 60px;
+          padding: 0 16px;
+          font-size: 15px;
+          line-height: 1.35;
+        }
+
+        .faq-item summary::after {
+          width: 28px;
+          height: 28px;
+          font-size: 18px;
+        }
+
+        .faq-item p {
+          padding: 0 16px 18px;
+          font-size: 14px;
+          line-height: 1.6;
+        }
+
+        .mobile-action-bar {
+          position: fixed;
+          left: 10px;
+          right: 10px;
+          bottom: 10px;
+          z-index: 60;
+          display: grid;
+          grid-template-columns: 1.2fr 0.8fr 1fr;
+          gap: 8px;
+          padding: 8px;
+          border: 1px solid rgba(212, 167, 101, 0.28);
+          background: rgba(6, 5, 4, 0.88);
+          backdrop-filter: blur(22px);
+          box-shadow: 0 18px 54px rgba(0, 0, 0, 0.42);
+          border-radius: 8px;
+        }
+
+        .mobile-action-bar a {
+          min-height: 44px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0 10px;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          background: rgba(255, 255, 255, 0.055);
+          color: var(--text);
+          font-size: 12px;
+          font-weight: 800;
+          border-radius: 5px;
+        }
+
+        .mobile-action-bar a:first-child {
+          background: var(--gold);
+          color: #100d09;
+          border-color: var(--gold);
+        }
+
+        .footer {
+          padding-bottom: 112px;
+          font-size: 13px;
+          line-height: 1.5;
+        }
+      }
+
+      @media (max-width: 360px) {
+        .container,
+        .nav-inner,
+        .footer {
+          width: calc(100% - 22px);
+        }
+
+        h1 {
+          font-size: 39px;
+        }
+
+        h2 {
+          font-size: 29px;
+        }
+
+        .mobile-action-bar {
+          grid-template-columns: 1fr;
+        }
+
+        body {
+          padding-bottom: 178px;
+        }
+      }
+      @media (max-width: 760px) {
+        .work-caption {
+          padding: 20px;
+          background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.66) 28%, rgba(0, 0, 0, 0.95) 100%);
+        }
+
+        .work-caption h3 {
+          font-size: 21px;
+          line-height: 1.12;
+        }
+
+        .work-caption p {
+          max-width: 100%;
+          font-size: 13px;
+          line-height: 1.45;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-glow" aria-hidden="true"></div>
+    <header class="nav" aria-label="Ana menü">
+      <div class="nav-inner">
+        <a class="brand" href="#top" aria-label="Miran Media ana sayfa">
+          <span class="brand-mark">
+            <img
+              src="miran.jpg"
+              onerror="this.onerror=null;this.src='file:///C:/Users/SYS/Desktop/miran.jpg';"
+              alt="Miran Media logo"
+            />
+          </span>
+          <span>Miran Media</span>
+        </a>
+        <nav class="nav-links" aria-label="Bölümler">
+          <a href="#hakkimizda">Hakkımızda</a>
+          <a href="#hizmetler">Hizmetler</a>
+          <a href="#portfoy">Portföy</a>
+          <a href="#sss">SSS</a>
+          <a href="#iletisim">İletişim</a>
+        </nav>
+        <a class="nav-cta" href="#iletisim">Teklif Al</a>
+        <a class="mobile-top-cta" href="tel:+905333240347">Ara</a>
+      </div>
+    </header>
+
+    <nav class="mobile-section-nav" aria-label="Mobil bölüm menüsü">
+      <a href="#hakkimizda">Hakkımızda</a>
+          <a href="#hizmetler">Hizmetler</a>
+          <a href="#portfoy">Portföy</a>
+          <a href="#sss">SSS</a>
+          <a href="#iletisim">İletişim</a>
+        </nav>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-video" aria-hidden="true"></div>
+        <div class="container hero-grid">
+          <div class="reveal">
+            <span class="eyebrow">Mardin Kreatif Ajans</span>
+            <h1>Markanız Sıradanlıktan Daha Fazlasını Hak Ediyor.</h1>
+            <p class="hero-copy">
+              İşletmenizi öne çıkaran sinematik içerikler, sosyal medya stratejileri ve dijital deneyimler üretiyoruz.
+            </p>
+            <div class="hero-actions">
+              <a class="button primary" href="#portfoy">Çalışmalarımızı İncele</a>
+              <a class="button" href="#iletisim">İletişime Geç</a>
+            </div>
+            <div class="signature-strip" aria-label="Miran Media uzmanlık alanları">
+              <span>Mardin Odaklı</span>
+              <span>Sinematik Reels</span>
+              <span>Premium Marka</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-band" id="hakkimizda">
+        <div class="container about-grid">
+          <div class="reveal">
+            <span class="eyebrow">Hakkımızda</span>
+            <p class="about-copy">
+              Miran Media, <span>Mardin/Midyat merkezli</span> işletmelerin görsel hikaye anlatımı ve dijital pazarlama ile büyümesine yardımcı olan kreatif dijital ajanstır.
+            </p>
+          </div>
+          <div class="about-note reveal">
+            <div class="note">
+              Mardin ilinde hizmet veren işletmelerin güven veren, modern ve satışa yakın bir marka algısı kurması için sosyal medya, video prodüksiyon, marka kimliği ve web deneyimini tek çatı altında tasarlıyoruz.
+            </div>
+            <div class="note">
+              İnşaat firmalarından restoranlara, lüks hizmet markalarından yeni girişimlere kadar her proje için estetik, strateji ve net iletişimi aynı masaya getiriyoruz.
+            </div>
+          </div>
+        </div>
+        <div class="container prestige-line reveal" aria-label="Miran Media çalışma yaklaşımı">
+          <div>
+            <strong>01</strong>
+            <span>Markanızın ilk bakışta daha güçlü, güvenilir ve seçkin algılanması için görsel standardı yükseltiriz.</span>
+          </div>
+          <div>
+            <strong>02</strong>
+            <span>Mardin pazarındaki müşteri beklentisini okuyup içerik dilini yerel güven ve modern estetikle kurarız.</span>
+          </div>
+          <div>
+            <strong>03</strong>
+            <span>Her çekimi, paylaşımı ve kampanyayı tek bir marka hikayesine bağlayan tutarlı bir sistem oluştururuz.</span>
+          </div>
+          <div>
+            <strong>04</strong>
+            <span>Sadece görünürlük değil, teklif alma, arama, mesaj ve ziyaret gibi gerçek aksiyonları hedefleriz.</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="hizmetler">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <span class="eyebrow">Hizmetler</span>
+              <h2>Markanız için güçlü bir dijital sahne kuruyoruz.</h2>
+            </div>
+            <p class="lead">
+              İçerik üretiminden reklam stratejisine kadar her temas noktasını premium algı, yüksek görsel kalite ve dönüşüm odağıyla tasarlıyoruz.
+            </p>
+          </div>
+          <div class="services-grid">
+            <article class="service-card reveal">
+              <div>
+                <div class="service-icon">01</div>
+                <h3>Sosyal Medya Yönetimi</h3>
+                <p>Marka tonunu güçlendiren aylık planlama, kreatif içerik takvimi ve profesyonel hesap yönetimi.</p>
+              </div>
+            </article>
+            <article class="service-card reveal">
+              <div>
+                <div class="service-icon">02</div>
+                <h3>Reels & Video Edit</h3>
+                <p>Dikkat çeken açılışlar, sinematik renkler, ritimli kurgu ve platforma uygun kısa video üretimi.</p>
+              </div>
+            </article>
+            <article class="service-card reveal">
+              <div>
+                <div class="service-icon">03</div>
+                <h3>Marka Kimliği ve Tasarım</h3>
+                <p>Logo, renk sistemi, sosyal medya şablonları ve markanızın premium görünmesini sağlayan tasarım dili.</p>
+              </div>
+            </article>
+            <article class="service-card reveal">
+              <div>
+                <div class="service-icon">04</div>
+                <h3>Web Sitesi Tasarımı</h3>
+                <p>Hızlı, modern, mobil uyumlu ve ilk bakışta güven oluşturan dijital vitrinler.</p>
+              </div>
+            </article>
+            <article class="service-card reveal">
+              <div>
+                <div class="service-icon">05</div>
+                <h3>Reklam Stratejileri</h3>
+                <p>Yerel pazarı okuyan, hedef kitleye net konuşan ve bütçeyi daha verimli kullanan kampanya kurguları.</p>
+              </div>
+            </article>
+            <article class="service-card reveal">
+              <div>
+                <div class="service-icon">06</div>
+                <h3>Kreatif İçerik Üretimi</h3>
+                <p>Fotoğraf, video, konsept metin ve kampanya fikirlerini tek bir güçlü marka hikayesinde birleştiriyoruz.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="portfolio" id="portfoy">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <span class="eyebrow">Portföy</span>
+              <h2>Sinematik, net ve pazara hazır marka dünyaları.</h2>
+            </div>
+            <p class="lead">
+              Mockup çalışmaları, reels konseptleri, inşaat firması marka sistemleri, restoran sosyal medya tasarımları ve lüks işletme görselleri.
+            </p>
+          </div>
+          <div class="portfolio-track">
+            <article class="work-card reveal">
+              <img
+                src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1300"
+                alt="Modern konut projesi için premium inşaat marka konsepti"
+              />
+              <div class="work-caption">
+                <span>İnşaat Markası</span>
+                <h3>Premium proje lansmanı</h3>
+                <p>Yeni konut projeleri için güven veren mimari imaj, net satış mesajı ve prestijli dijital sunum.</p>
+              </div>
+            </article>
+            <div class="work-stack">
+              <article class="work-card small reveal">
+                <img
+                  src="https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=1000"
+                  alt="Premium restoran sosyal medya kampanyası"
+                />
+                <div class="work-caption">
+                  <span>Restoran</span>
+                  <h3>Sosyal medya seti</h3>
+                  <p>Menü, mekan atmosferi ve rezervasyon isteğini artıran sıcak ama şık içerik dili.</p>
+                </div>
+              </article>
+              <article class="work-card small reveal">
+                <img
+                  src="https://images.pexels.com/photos/66134/pexels-photo-66134.jpeg?auto=compress&cs=tinysrgb&w=1000"
+                  alt="Sinematik reels prodüksiyonu"
+                />
+                <div class="work-caption">
+                  <span>Reels</span>
+                  <h3>Sinematik kurgu dili</h3>
+                  <p>İlk üç saniyede dikkat çeken, marka değerini yükselten kısa video ve reklam kurguları.</p>
+                </div>
+              </article>
+            </div>
+            <article class="work-card reveal">
+              <img
+                src="https://images.pexels.com/photos/35215414/pexels-photo-35215414.jpeg?auto=compress&cs=tinysrgb&w=1300"
+                alt="Lüks işletme için modern premium marka atmosferi"
+              />
+              <div class="work-caption">
+                <span>Lüks İşletme</span>
+                <h3>Görsel kampanya dünyası</h3>
+                <p>Otel, klinik, showroom ve özel hizmet markaları için seçkin algı kuran görsel sistem.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <span class="eyebrow">Neden Biz?</span>
+              <h2>Yerel pazarı bilen, premium algı kuran ekip.</h2>
+            </div>
+            <p class="lead">
+              İlk izlenimi güçlendiren görsel kalite, hızlı iletişim ve modern pazarlama stratejileriyle işletmenizin değerini daha görünür hale getiriyoruz.
+            </p>
+          </div>
+          <div class="why-grid">
+            <article class="why-item reveal">
+              <strong>01</strong>
+              <h3>Yüksek görsel kalite</h3>
+              <p>Her içerikte temiz kompozisyon, güçlü renk dili ve profesyonel sunum.</p>
+            </article>
+            <article class="why-item reveal">
+              <strong>02</strong>
+              <h3>Hızlı iletişim</h3>
+              <p>Süreçleri netleştiren, aksiyonları hızlandıran düzenli iletişim akışı.</p>
+            </article>
+            <article class="why-item reveal">
+              <strong>03</strong>
+              <h3>Modern strateji</h3>
+              <p>Platform dinamiklerini ve hedef kitle davranışlarını izleyen içerik yaklaşımı.</p>
+            </article>
+            <article class="why-item reveal">
+              <strong>04</strong>
+              <h3>Yerel pazar analizi</h3>
+              <p>Mardin, Midyat ve çevresindeki müşteri beklentilerini okuyabilen konumlama.</p>
+            </article>
+            <article class="why-item reveal">
+              <strong>05</strong>
+              <h3>Premium marka yaklaşımı</h3>
+              <p>İşletmenizi daha güvenilir, seçkin ve akılda kalıcı gösteren marka dili.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonials">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <span class="eyebrow">Müşteri Yorumları</span>
+              <h2>Güven hissi ilk görüşmeden başlar.</h2>
+            </div>
+            <p class="lead">
+              Farklı sektörlerden işletmeler için daha profesyonel, daha anlaşılır ve daha etkileyici dijital yüzler tasarlıyoruz.
+            </p>
+          </div>
+          <div class="testimonial-grid">
+            <article class="quote-card reveal">
+              <div class="stars">★★★★★</div>
+              <p>“Projelerimizi sosyal medyada çok daha güçlü göstermeye başladık. Görsel kalite farkı ilk haftadan hissedildi.”</p>
+              <div class="client">
+                <strong>Azra Yapı</strong>
+                <span>İnşaat & Gayrimenkul</span>
+              </div>
+            </article>
+            <article class="quote-card reveal">
+              <div class="stars">★★★★★</div>
+              <p>“Restoran hesabımız artık daha düzenli, şık ve iştah açıcı görünüyor. Çekim ve paylaşım süreci çok rahat ilerledi.”</p>
+              <div class="client">
+                <strong>Liva Restaurant</strong>
+                <span>Yeme İçme Markası</span>
+              </div>
+            </article>
+            <article class="quote-card reveal">
+              <div class="stars">★★★★★</div>
+              <p>“Markamızı yerel görünümden çıkarıp daha kurumsal bir seviyeye taşıdılar. İletişim hızlı, sonuçlar temizdi.”</p>
+              <div class="client">
+                <strong>Midyat Clinic</strong>
+                <span>Sağlık & Hizmet</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq" id="sss">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <span class="eyebrow">SSS</span>
+              <h2>Başlamadan önce en çok merak edilenler.</h2>
+            </div>
+            <p class="lead">
+              Miran Media ile çalışmadan önce süreci, hizmet kapsamını ve iletişimi netleştiren kısa cevaplar.
+            </p>
+          </div>
+          <div class="faq-list">
+            <details class="faq-item reveal" open>
+              <summary>Markam sosyal medyada neden profesyonel görünmeli?</summary>
+              <p>Çünkü müşteri sizi aramadan önce profilinize bakar. Düzenli tasarım, kaliteli reels, net mesaj ve güçlü görsel dil; işletmenizi daha güvenilir, daha aktif ve daha tercih edilebilir gösterir.</p>
+            </details>
+            <details class="faq-item reveal">
+              <summary>Miran Media bir reklam ajansı olarak ne yapar?</summary>
+              <p>Markanızın dijital vitriniyle ilgileniriz: sosyal medya yönetimi, kreatif içerik, reels/video edit, reklam kampanyası, marka kimliği, web sitesi ve satışa dönük görsel iletişim kurgusu hazırlarız.</p>
+            </details>
+            <details class="faq-item reveal">
+              <summary>Reels içerikleri işletmeme gerçekten katkı sağlar mı?</summary>
+              <p>Evet. Doğru fikir, güçlü ilk saniye, temiz kurgu ve profesyonel görüntü diliyle reels içerikleri daha fazla kişiye ulaşır. Özellikle restoran, inşaat, güzellik, klinik ve hizmet sektörlerinde güven ve merak oluşturur.</p>
+            </details>
+            <details class="faq-item reveal">
+              <summary>İnşaat firmaları için nasıl bir reklam dili kuruyorsunuz?</summary>
+              <p>Projeyi sadece bina olarak değil, yatırım, güven ve yaşam alanı olarak anlatırız. Mimari detaylar, lokasyon avantajı, proje prestiji ve satış mesajı için sosyal medya içerikleri, reels kurguları ve kampanya görselleri hazırlarız.</p>
+            </details>
+            <details class="faq-item reveal">
+              <summary>Restoran ve yerel işletmeler için nasıl içerikler üretilir?</summary>
+              <p>Mekan atmosferini, ürünleri, servis kalitesini ve müşteri deneyimini öne çıkaran iştah açıcı içerikler üretiriz. Amaç sadece paylaşım yapmak değil; rezervasyon, ziyaret ve mesaj alma ihtimalini artırmaktır.</p>
+            </details>
+            <details class="faq-item reveal">
+              <summary>Reklam verirken bütçem boşa gider mi?</summary>
+              <p>Reklamın etkili olması için önce görsel, hedef kitle ve mesaj doğru kurulmalıdır. Biz kampanyayı sadece yayına almakla kalmayız; kime, hangi mesajla, hangi içerikle çıkılması gerektiğini planlarız.</p>
+            </details>
+            <details class="faq-item reveal">
+              <summary>Mardin’de hizmet veren işletmeler için avantajınız nedir?</summary>
+              <p>Mardin’in yerel müşteri yapısını, görsel kültürünü ve işletme dinamiklerini dikkate alırız. Böylece markanız hem şehre yakın hisseder hem de modern, premium ve güvenilir bir seviyede görünür.</p>
+            </details>
+            <details class="faq-item reveal">
+              <summary>Çalışma süreci nasıl başlar?</summary>
+              <p>Önce kısa bir keşif görüşmesi yapılır. İşletmenizin hedefi, sektörü, mevcut sosyal medya durumu ve ihtiyaçları netleşir. Ardından içerik, tasarım, çekim ve reklam planı için size uygun yol haritası hazırlanır.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact" id="iletisim">
+        <div class="container contact-wrap">
+          <div class="contact-main reveal">
+            <div>
+              <span class="eyebrow">İletişim</span>
+              <h2>Markanızın yeni dijital yüzünü birlikte tasarlayalım.</h2>
+              <p>
+                Sosyal medya, video prodüksiyon, web sitesi veya marka kimliği için kısa bir görüşme planlayalım. İşletmenizin ihtiyacına göre net, uygulanabilir ve premium bir yol haritası çıkaralım.
+              </p>
+              <form class="appointment-form" id="appointmentForm">
+                <label>
+                  İsim
+                  <input id="firstName" name="firstName" type="text" placeholder="Adınız" autocomplete="given-name" required />
+                </label>
+                <label>
+                  Soy isim
+                  <input id="lastName" name="lastName" type="text" placeholder="Soyadınız" autocomplete="family-name" required />
+                </label>
+                <label>
+                  İşletme adı
+                  <input id="businessName" name="businessName" type="text" placeholder="İşletmenizin adı" autocomplete="organization" required />
+                </label>
+                <button class="button primary" type="submit">Randevu Oluştur</button>
+                <span class="form-note">Bilgileriniz WhatsApp mesajı olarak hazırlanır, gönderim için WhatsApp açılır.</span>
+              </form>
+            </div>
+            <div class="hero-actions">
+              <a class="button primary" href="https://wa.me/905333240347" target="_blank" rel="noreferrer">WhatsApp</a>
+              <a class="button" href="https://instagram.com/miranmedia47" target="_blank" rel="noreferrer">Instagram</a>
+            </div>
+          </div>
+          <div class="contact-links reveal">
+            <a class="contact-link" href="https://wa.me/905333240347" target="_blank" rel="noreferrer">
+              <span>WhatsApp</span>
+              <strong>0533 324 0347</strong>
+            </a>
+            <a class="contact-link" href="https://instagram.com/miranmedia47" target="_blank" rel="noreferrer">
+              <span>Instagram</span>
+              <strong>@miranmedia47</strong>
+            </a>
+            <a class="contact-link" href="tel:+905333240347">
+              <span>Telefon</span>
+              <strong>0533 324 0347</strong>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>© 2026 <strong>Miran Media</strong>. Dijital kreatif ajans.</span>
+      <span>Mardin / Midyat merkezli premium içerik ve marka stüdyosu.</span>
+    </footer>
+
+    <div class="mobile-action-bar" aria-label="Mobil hızlı iletişim">
+      <a href="#iletisim">Randevu</a>
+      <a href="tel:+905333240347">Ara</a>
+      <a href="https://instagram.com/miranmedia47" target="_blank" rel="noreferrer">Instagram</a>
+    </div>
+
+    <script>
+      const revealItems = document.querySelectorAll(".reveal");
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.14 }
+      );
+
+      revealItems.forEach((item, index) => {
+        item.style.transitionDelay = `${Math.min(index % 6, 4) * 70}ms`;
+        observer.observe(item);
+      });
+
+      window.addEventListener("pointermove", (event) => {
+        const x = event.clientX / window.innerWidth - 0.5;
+        const y = event.clientY / window.innerHeight - 0.5;
+        document.documentElement.style.setProperty("--mx", x.toFixed(3));
+        document.documentElement.style.setProperty("--my", y.toFixed(3));
+      });
+
+      const appointmentForm = document.querySelector("#appointmentForm");
+
+      appointmentForm?.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const firstName = document.querySelector("#firstName").value.trim();
+        const lastName = document.querySelector("#lastName").value.trim();
+        const businessName = document.querySelector("#businessName").value.trim();
+
+        const message = [
+          "Merhaba Miran Media, randevu oluşturmak istiyorum.",
+          "",
+          `İsim: ${firstName}`,
+          `Soy isim: ${lastName}`,
+          `İşletme adı: ${businessName}`
+        ].join("\n");
+
+        window.open(`https://wa.me/905333240347?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+      });
+    </script>
+  </body>
+</html>
