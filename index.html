@@ -154,7 +154,7 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        object-position: center 42%;
+        object-position: center;
         padding: 0;
         border-radius: 10px;
       }
@@ -476,6 +476,68 @@
         line-height: 1.65;
       }
 
+      .mascot-section {
+        padding: 0;
+      }
+
+      .mascot-card {
+        display: grid;
+        grid-template-columns: minmax(0, 0.62fr) minmax(240px, 0.38fr);
+        gap: 28px;
+        align-items: center;
+        padding: clamp(26px, 5vw, 48px);
+        border: 1px solid rgba(212, 167, 101, 0.24);
+        background:
+          radial-gradient(circle at 86% 18%, rgba(212, 167, 101, 0.22), transparent 18rem),
+          linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02)),
+          rgba(8, 7, 6, 0.74);
+        box-shadow: 0 26px 90px rgba(0, 0, 0, 0.28);
+      }
+
+      .mascot-copy h2 {
+        max-width: 720px;
+      }
+
+      .mascot-copy p {
+        max-width: 620px;
+        margin-top: 18px;
+        color: var(--muted);
+        font-size: 17px;
+        line-height: 1.7;
+      }
+
+      .owl-mascot {
+        position: relative;
+        width: min(320px, 100%);
+        aspect-ratio: 1 / 1;
+        margin: 0;
+        justify-self: center;
+        overflow: hidden;
+        border: 1px solid rgba(212, 167, 101, 0.36);
+        border-radius: 50%;
+        background: #050403;
+        box-shadow: 0 28px 70px rgba(0, 0, 0, 0.46);
+      }
+
+      .owl-mascot::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background:
+          radial-gradient(circle at 50% 36%, transparent 0 32%, rgba(212, 167, 101, 0.16) 33%, transparent 52%),
+          linear-gradient(180deg, transparent 52%, rgba(0, 0, 0, 0.64) 100%);
+      }
+
+      .owl-mascot img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 50%;
+        filter: saturate(0.78) contrast(1.08) brightness(0.86);
+      }
+
       .services-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -526,6 +588,32 @@
         margin-top: 16px;
         color: var(--muted);
         line-height: 1.65;
+      }
+
+      .service-points {
+        display: grid;
+        gap: 8px;
+        margin: 20px 0 0;
+        padding: 0;
+        color: rgba(247, 244, 236, 0.72);
+        font-size: 13px;
+        line-height: 1.45;
+        list-style: none;
+      }
+
+      .service-points li {
+        display: flex;
+        gap: 8px;
+        align-items: flex-start;
+      }
+
+      .service-points li::before {
+        content: "";
+        flex: 0 0 auto;
+        width: 6px;
+        height: 6px;
+        margin-top: 7px;
+        background: var(--gold);
       }
 
       .portfolio {
@@ -1319,6 +1407,28 @@
           line-height: 1.58;
         }
 
+        .service-points {
+          margin-top: 16px;
+          font-size: 12px;
+        }
+
+        .mascot-card {
+          grid-template-columns: 1fr;
+          gap: 18px;
+          padding: 22px;
+        }
+
+        .mascot-copy p {
+          margin-top: 14px;
+          font-size: 14px;
+          line-height: 1.62;
+        }
+
+        .owl-mascot {
+          width: min(180px, 62vw);
+          order: -1;
+        }
+
         .portfolio-track,
         .work-stack,
         .testimonial-grid,
@@ -1487,8 +1597,8 @@
         <a class="brand" href="#top" aria-label="Miran Media ana sayfa">
           <span class="brand-mark">
             <img
-              src="miran.jpg"
-              onerror="this.onerror=null;this.src='file:///C:/Users/SYS/Desktop/miran.jpg';"
+              src="707406143_1817204622592360_14589169205099268_n.jpg"
+              onerror="this.onerror=null;this.src='file:///C:/Users/SYS/Desktop/M%C4%B0RAN%20MED%C4%B0A/707406143_1817204622592360_14589169205099268_n.jpg';"
               alt="Miran Media logo"
             />
           </span>
@@ -1574,6 +1684,27 @@
         </div>
       </section>
 
+      <section class="mascot-section">
+        <div class="container">
+          <div class="mascot-card reveal">
+            <div class="mascot-copy">
+              <span class="eyebrow">Maskotumuz</span>
+              <h2>Geceyi gören, markayı parlatan kreatif bakış.</h2>
+              <p>
+                Baykuş maskotumuz; stratejik düşünmeyi, güçlü gözlemi ve karanlıkta bile doğru fikri bulmayı temsil eder. Miran Media’da her marka için önce pazarı izler, sonra dikkat çeken bir görsel hikaye kurarız.
+              </p>
+            </div>
+            <figure class="owl-mascot" aria-label="Miran Media gerçekçi baykuş maskotu">
+              <img
+                src="707406143_1817204622592360_14589169205099268_n.jpg"
+                onerror="this.onerror=null;this.src='file:///C:/Users/SYS/Desktop/M%C4%B0RAN%20MED%C4%B0A/707406143_1817204622592360_14589169205099268_n.jpg';"
+                alt="Miran Media baykuş maskotu ve marka logosu"
+              />
+            </figure>
+          </div>
+        </div>
+      </section>
+
       <section id="hizmetler">
         <div class="container">
           <div class="section-head reveal">
@@ -1590,42 +1721,72 @@
               <div>
                 <div class="service-icon">01</div>
                 <h3>Sosyal Medya Yönetimi</h3>
-                <p>Marka tonunu güçlendiren aylık planlama, kreatif içerik takvimi ve profesyonel hesap yönetimi.</p>
+                <p>Markanızın dijital vitrini düzenli, güvenilir ve satışa yakın görünsün diye tüm sosyal medya akışını planlarız.</p>
+                <ul class="service-points">
+                  <li>Aylık içerik planı</li>
+                  <li>Profesyonel post ve hikaye tasarımları</li>
+                  <li>Marka diline uygun paylaşım akışı</li>
+                </ul>
               </div>
             </article>
             <article class="service-card reveal">
               <div>
                 <div class="service-icon">02</div>
                 <h3>Reels & Video Edit</h3>
-                <p>Dikkat çeken açılışlar, sinematik renkler, ritimli kurgu ve platforma uygun kısa video üretimi.</p>
+                <p>İlk saniyede dikkat çeken, profesyonel görünen ve markanızın kalitesini hissettiren kısa videolar üretiriz.</p>
+                <ul class="service-points">
+                  <li>Sinematik renk ve ritimli kurgu</li>
+                  <li>Instagram/TikTok uyumlu format</li>
+                  <li>Başlık, müzik ve akış kurgusu</li>
+                </ul>
               </div>
             </article>
             <article class="service-card reveal">
               <div>
                 <div class="service-icon">03</div>
                 <h3>Marka Kimliği ve Tasarım</h3>
-                <p>Logo, renk sistemi, sosyal medya şablonları ve markanızın premium görünmesini sağlayan tasarım dili.</p>
+                <p>İşletmenizin her yerde aynı kaliteyle görünmesi için premium ve tutarlı bir görsel kimlik oluştururuz.</p>
+                <ul class="service-points">
+                  <li>Logo ve renk sistemi</li>
+                  <li>Sosyal medya tasarım dili</li>
+                  <li>Kurumsal ve güven veren görünüm</li>
+                </ul>
               </div>
             </article>
             <article class="service-card reveal">
               <div>
                 <div class="service-icon">04</div>
                 <h3>Web Sitesi Tasarımı</h3>
-                <p>Hızlı, modern, mobil uyumlu ve ilk bakışta güven oluşturan dijital vitrinler.</p>
+                <p>Mobilde hızlı açılan, ilk bakışta güven veren ve ziyaretçiyi iletişime yönlendiren web siteleri tasarlarız.</p>
+                <ul class="service-points">
+                  <li>Mobil öncelikli tasarım</li>
+                  <li>WhatsApp ve randevu yönlendirmesi</li>
+                  <li>Premium marka sunumu</li>
+                </ul>
               </div>
             </article>
             <article class="service-card reveal">
               <div>
                 <div class="service-icon">05</div>
                 <h3>Reklam Stratejileri</h3>
-                <p>Yerel pazarı okuyan, hedef kitleye net konuşan ve bütçeyi daha verimli kullanan kampanya kurguları.</p>
+                <p>Reklam bütçenizi doğru hedef kitle, doğru mesaj ve güçlü kreatiflerle daha verimli kullanmanız için plan yaparız.</p>
+                <ul class="service-points">
+                  <li>Hedef kitle ve kampanya kurgusu</li>
+                  <li>Reklam görseli ve metin önerileri</li>
+                  <li>Yerel pazar odaklı strateji</li>
+                </ul>
               </div>
             </article>
             <article class="service-card reveal">
               <div>
                 <div class="service-icon">06</div>
                 <h3>Kreatif İçerik Üretimi</h3>
-                <p>Fotoğraf, video, konsept metin ve kampanya fikirlerini tek bir güçlü marka hikayesinde birleştiriyoruz.</p>
+                <p>İşletmenizin hikayesini daha güçlü anlatan fotoğraf, video, konsept ve kampanya fikirleri üretiriz.</p>
+                <ul class="service-points">
+                  <li>Çekim konsepti ve içerik fikri</li>
+                  <li>Fotoğraf/video üretimi</li>
+                  <li>Kampanya ve lansman içerikleri</li>
+                </ul>
               </div>
             </article>
           </div>
