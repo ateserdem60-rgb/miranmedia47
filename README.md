@@ -1,2 +1,3 @@
 # miranmedia47
-reklam ajans
+reklam ajansı
+
