@@ -696,6 +696,14 @@
         transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
       }
 
+      .process-step.reveal {
+        transform: translateY(36px) scale(0.97);
+      }
+
+      .process-step.reveal.visible {
+        transform: translateY(0) scale(1);
+      }
+
       .process-step:hover {
         transform: translateY(-8px);
         border-color: rgba(212, 175, 55, 0.44);
@@ -1095,6 +1103,7 @@
         background: rgba(255, 255, 255, 0.045);
         backdrop-filter: blur(18px);
         overflow: hidden;
+        transition: border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
       }
 
       .faq-item summary {
@@ -1144,6 +1153,24 @@
         line-height: 1.7;
       }
 
+      .faq-item .faq-content {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 0.38s ease;
+      }
+
+      .faq-item .faq-content > div {
+        overflow: hidden;
+      }
+
+      .faq-item[open] .faq-content {
+        grid-template-rows: 1fr;
+      }
+
+      .faq-item.is-closing .faq-content {
+        grid-template-rows: 0fr;
+      }
+
       .contact {
         padding-bottom: 48px;
       }
@@ -1159,6 +1186,164 @@
         display: grid;
         gap: 12px;
         margin-top: 30px;
+      }
+
+      .appointment-box {
+        position: relative;
+        margin-top: 30px;
+        padding: 18px;
+        border: 1px solid rgba(212, 175, 55, 0.24);
+        border-radius: 18px;
+        background:
+          radial-gradient(circle at 90% 0%, rgba(212, 175, 55, 0.18), transparent 16rem),
+          rgba(255, 255, 255, 0.055);
+        backdrop-filter: blur(24px);
+        box-shadow: 0 28px 88px rgba(0, 0, 0, 0.34);
+        overflow: hidden;
+      }
+
+      .appointment-box::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background: linear-gradient(120deg, transparent, rgba(245, 241, 235, 0.08), transparent);
+        transform: translateX(-120%);
+        animation: bookingShine 5.5s ease-in-out infinite;
+      }
+
+      .booking-head {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 16px;
+      }
+
+      .booking-head strong {
+        display: block;
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 24px;
+        line-height: 1;
+      }
+
+      .booking-head span {
+        display: block;
+        margin-top: 6px;
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .booking-badge {
+        flex: 0 0 auto;
+        width: 54px;
+        height: 54px;
+        display: grid;
+        place-items: center;
+        border: 1px solid rgba(212, 175, 55, 0.36);
+        border-radius: 50%;
+        color: var(--gold);
+        font-weight: 900;
+        box-shadow: 0 0 28px rgba(212, 175, 55, 0.12);
+      }
+
+      .booking-fields {
+        position: relative;
+        display: grid;
+        gap: 10px;
+      }
+
+      .booking-field {
+        display: grid;
+        grid-template-columns: 34px minmax(0, 1fr);
+        gap: 12px;
+        align-items: center;
+        min-height: 64px;
+        padding: 10px 12px;
+        border: 1px solid rgba(255, 255, 255, 0.11);
+        border-radius: 14px;
+        background: rgba(10, 10, 10, 0.34);
+        transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+      }
+
+      .booking-field:focus-within {
+        transform: translateY(-2px);
+        border-color: rgba(212, 175, 55, 0.56);
+        background: rgba(10, 10, 10, 0.48);
+      }
+
+      .booking-field i {
+        width: 34px;
+        height: 34px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        background: rgba(212, 175, 55, 0.12);
+        color: var(--gold);
+        font-style: normal;
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      .booking-field label {
+        display: grid;
+        gap: 5px;
+        color: rgba(245, 241, 235, 0.72);
+        font-size: 11px;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      .booking-field input {
+        width: 100%;
+        min-height: 24px;
+        border: 0;
+        background: transparent;
+        color: var(--text);
+        padding: 0;
+        font: inherit;
+        font-size: 15px;
+        outline: none;
+      }
+
+      .booking-field input::placeholder {
+        color: rgba(245, 241, 235, 0.36);
+      }
+
+      .booking-preview {
+        position: relative;
+        margin-top: 12px;
+        padding: 14px;
+        border: 1px solid rgba(212, 175, 55, 0.18);
+        border-radius: 14px;
+        background: rgba(0, 0, 0, 0.28);
+        color: rgba(245, 241, 235, 0.7);
+        font-size: 13px;
+        line-height: 1.55;
+      }
+
+      .booking-preview strong {
+        color: var(--gold);
+      }
+
+      .appointment-form.booking-form {
+        margin-top: 0;
+      }
+
+      .appointment-form.booking-form .button {
+        margin-top: 12px;
+      }
+
+      @keyframes bookingShine {
+        0%,
+        54% {
+          transform: translateX(-120%);
+        }
+        100% {
+          transform: translateX(120%);
+        }
       }
 
       .contact-signature {
@@ -2438,35 +2623,35 @@
           <div class="faq-list">
             <details class="faq-item reveal" open>
               <summary>Markam sosyal medyada neden profesyonel görünmeli?</summary>
-              <p>Çünkü müşteri sizi aramadan önce profilinize bakar. Düzenli tasarım, kaliteli reels, net mesaj ve güçlü görsel dil; işletmenizi daha güvenilir, daha aktif ve daha tercih edilebilir gösterir.</p>
+              <div class="faq-content"><div><p>Çünkü müşteri sizi aramadan önce profilinize bakar. Düzenli tasarım, kaliteli reels, net mesaj ve güçlü görsel dil; işletmenizi daha güvenilir, daha aktif ve daha tercih edilebilir gösterir.</p></div></div>
             </details>
             <details class="faq-item reveal">
               <summary>Miran Media bir reklam ajansı olarak ne yapar?</summary>
-              <p>Markanızın dijital vitriniyle ilgileniriz: sosyal medya yönetimi, kreatif içerik, reels/video edit, reklam kampanyası, marka kimliği, web sitesi ve satışa dönük görsel iletişim kurgusu hazırlarız.</p>
+              <div class="faq-content"><div><p>Markanızın dijital vitriniyle ilgileniriz: sosyal medya yönetimi, kreatif içerik, reels/video edit, reklam kampanyası, marka kimliği, web sitesi ve satışa dönük görsel iletişim kurgusu hazırlarız.</p></div></div>
             </details>
             <details class="faq-item reveal">
               <summary>Reels içerikleri işletmeme gerçekten katkı sağlar mı?</summary>
-              <p>Evet. Doğru fikir, güçlü ilk saniye, temiz kurgu ve profesyonel görüntü diliyle reels içerikleri daha fazla kişiye ulaşır. Özellikle restoran, inşaat, güzellik, klinik ve hizmet sektörlerinde güven ve merak oluşturur.</p>
+              <div class="faq-content"><div><p>Evet. Doğru fikir, güçlü ilk saniye, temiz kurgu ve profesyonel görüntü diliyle reels içerikleri daha fazla kişiye ulaşır. Özellikle restoran, inşaat, güzellik, klinik ve hizmet sektörlerinde güven ve merak oluşturur.</p></div></div>
             </details>
             <details class="faq-item reveal">
               <summary>İnşaat firmaları için nasıl bir reklam dili kuruyorsunuz?</summary>
-              <p>Projeyi sadece bina olarak değil, yatırım, güven ve yaşam alanı olarak anlatırız. Mimari detaylar, lokasyon avantajı, proje prestiji ve satış mesajı için sosyal medya içerikleri, reels kurguları ve kampanya görselleri hazırlarız.</p>
+              <div class="faq-content"><div><p>Projeyi sadece bina olarak değil, yatırım, güven ve yaşam alanı olarak anlatırız. Mimari detaylar, lokasyon avantajı, proje prestiji ve satış mesajı için sosyal medya içerikleri, reels kurguları ve kampanya görselleri hazırlarız.</p></div></div>
             </details>
             <details class="faq-item reveal">
               <summary>Restoran ve yerel işletmeler için nasıl içerikler üretilir?</summary>
-              <p>Mekan atmosferini, ürünleri, servis kalitesini ve müşteri deneyimini öne çıkaran iştah açıcı içerikler üretiriz. Amaç sadece paylaşım yapmak değil; rezervasyon, ziyaret ve mesaj alma ihtimalini artırmaktır.</p>
+              <div class="faq-content"><div><p>Mekan atmosferini, ürünleri, servis kalitesini ve müşteri deneyimini öne çıkaran iştah açıcı içerikler üretiriz. Amaç sadece paylaşım yapmak değil; rezervasyon, ziyaret ve mesaj alma ihtimalini artırmaktır.</p></div></div>
             </details>
             <details class="faq-item reveal">
               <summary>Reklam verirken bütçem boşa gider mi?</summary>
-              <p>Reklamın etkili olması için önce görsel, hedef kitle ve mesaj doğru kurulmalıdır. Biz kampanyayı sadece yayına almakla kalmayız; kime, hangi mesajla, hangi içerikle çıkılması gerektiğini planlarız.</p>
+              <div class="faq-content"><div><p>Reklamın etkili olması için önce görsel, hedef kitle ve mesaj doğru kurulmalıdır. Biz kampanyayı sadece yayına almakla kalmayız; kime, hangi mesajla, hangi içerikle çıkılması gerektiğini planlarız.</p></div></div>
             </details>
             <details class="faq-item reveal">
               <summary>Mardin’de hizmet veren işletmeler için avantajınız nedir?</summary>
-              <p>Mardin’in yerel müşteri yapısını, görsel kültürünü ve işletme dinamiklerini dikkate alırız. Böylece markanız hem şehre yakın hisseder hem de modern, premium ve güvenilir bir seviyede görünür.</p>
+              <div class="faq-content"><div><p>Mardin’in yerel müşteri yapısını, görsel kültürünü ve işletme dinamiklerini dikkate alırız. Böylece markanız hem şehre yakın hisseder hem de modern, premium ve güvenilir bir seviyede görünür.</p></div></div>
             </details>
             <details class="faq-item reveal">
               <summary>Çalışma süreci nasıl başlar?</summary>
-              <p>Önce kısa bir keşif görüşmesi yapılır. İşletmenizin hedefi, sektörü, mevcut sosyal medya durumu ve ihtiyaçları netleşir. Ardından içerik, tasarım, çekim ve reklam planı için size uygun yol haritası hazırlanır.</p>
+              <div class="faq-content"><div><p>Önce kısa bir keşif görüşmesi yapılır. İşletmenizin hedefi, sektörü, mevcut sosyal medya durumu ve ihtiyaçları netleşir. Ardından içerik, tasarım, çekim ve reklam planı için size uygun yol haritası hazırlanır.</p></div></div>
             </details>
           </div>
         </div>
@@ -2486,22 +2671,45 @@
                 <span>02 / Kreatif Yol Haritası</span>
                 <span>03 / Premium Üretim</span>
               </div>
-              <form class="appointment-form" id="appointmentForm">
-                <label>
-                  İsim
-                  <input id="firstName" name="firstName" type="text" placeholder="Adınız" autocomplete="given-name" required />
-                </label>
-                <label>
-                  Soy isim
-                  <input id="lastName" name="lastName" type="text" placeholder="Soyadınız" autocomplete="family-name" required />
-                </label>
-                <label>
-                  İşletme adı
-                  <input id="businessName" name="businessName" type="text" placeholder="İşletmenizin adı" autocomplete="organization" required />
-                </label>
-                <button class="button primary" type="submit">Randevu Oluştur</button>
-                <span class="form-note">Bilgileriniz WhatsApp mesajı olarak hazırlanır, gönderim için WhatsApp açılır.</span>
-              </form>
+              <div class="appointment-box reveal">
+                <div class="booking-head">
+                  <div>
+                    <strong>Creative Call</strong>
+                    <span>WhatsApp üzerinden hızlı keşif randevusu</span>
+                  </div>
+                  <div class="booking-badge">47</div>
+                </div>
+                <form class="appointment-form booking-form" id="appointmentForm">
+                  <div class="booking-fields">
+                    <div class="booking-field">
+                      <i>01</i>
+                      <label>
+                        İsim
+                        <input id="firstName" name="firstName" type="text" placeholder="Adınız" autocomplete="given-name" required />
+                      </label>
+                    </div>
+                    <div class="booking-field">
+                      <i>02</i>
+                      <label>
+                        Soy isim
+                        <input id="lastName" name="lastName" type="text" placeholder="Soyadınız" autocomplete="family-name" required />
+                      </label>
+                    </div>
+                    <div class="booking-field">
+                      <i>03</i>
+                      <label>
+                        İşletme adı
+                        <input id="businessName" name="businessName" type="text" placeholder="İşletmenizin adı" autocomplete="organization" required />
+                      </label>
+                    </div>
+                  </div>
+                  <div class="booking-preview" id="bookingPreview">
+                    <strong>Hazır mesaj:</strong> Merhaba Miran Media, randevu oluşturmak istiyorum.
+                  </div>
+                  <button class="button primary" type="submit">Randevu Oluştur</button>
+                  <span class="form-note">Butona bastığınızda bilgileriniz WhatsApp mesajına dönüşür.</span>
+                </form>
+              </div>
             </div>
             <div class="hero-actions">
               <a class="button primary" href="https://wa.me/905333240347" target="_blank" rel="noreferrer">WhatsApp</a>
@@ -2558,8 +2766,28 @@
       );
 
       revealItems.forEach((item, index) => {
-        item.style.transitionDelay = `${Math.min(index % 6, 4) * 70}ms`;
+        const processIndex = item.matches(".process-step") ? [...document.querySelectorAll(".process-step")].indexOf(item) : -1;
+        item.style.transitionDelay = processIndex >= 0 ? `${processIndex * 160}ms` : `${Math.min(index % 6, 4) * 70}ms`;
         observer.observe(item);
+      });
+
+      document.querySelectorAll(".faq-item").forEach((item) => {
+        const summary = item.querySelector("summary");
+
+        summary?.addEventListener("click", (event) => {
+          event.preventDefault();
+
+          if (item.open) {
+            item.classList.add("is-closing");
+            setTimeout(() => {
+              item.open = false;
+              item.classList.remove("is-closing");
+            }, 360);
+            return;
+          }
+
+          item.open = true;
+        });
       });
 
       window.addEventListener("load", () => {
@@ -2581,6 +2809,25 @@
       });
 
       const appointmentForm = document.querySelector("#appointmentForm");
+      const bookingPreview = document.querySelector("#bookingPreview");
+      const bookingInputs = ["#firstName", "#lastName", "#businessName"].map((selector) => document.querySelector(selector));
+
+      const updateBookingPreview = () => {
+        const [firstName, lastName, businessName] = bookingInputs.map((input) => input?.value.trim());
+        const name = [firstName, lastName].filter(Boolean).join(" ");
+        const preview = [
+          "Merhaba Miran Media, randevu oluşturmak istiyorum.",
+          name ? `İsim: ${name}` : "",
+          businessName ? `İşletme: ${businessName}` : ""
+        ].filter(Boolean).join("<br>");
+
+        if (bookingPreview) {
+          bookingPreview.innerHTML = `<strong>Hazır mesaj:</strong><br>${preview}`;
+        }
+      };
+
+      bookingInputs.forEach((input) => input?.addEventListener("input", updateBookingPreview));
+      updateBookingPreview();
 
       appointmentForm?.addEventListener("submit", (event) => {
         event.preventDefault();
